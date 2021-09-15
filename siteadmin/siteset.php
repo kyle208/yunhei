@@ -1,10 +1,10 @@
 <?php
 /**
- * 站点设置
+ * 全局设置
 **/
 $mod='blank';
 include("../include/common.php");
-$title='站点设置';
+$title='全局设置';
 include './head.php';
 if($islogin==1){}else exit("<script language='javascript'>window.location.href='./login.php';</script>");
 ?>
@@ -22,7 +22,7 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="./"><span class="glyphicon glyphicon-user"></span> 平台首页</a>
+            <a href="./"><span class="glyphicon glyphicon-user"></span> 后台首页</a>
           </li>
           <li>
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-pushpin"></span> 黑名单管理<b class="caret"></b></a>
@@ -35,7 +35,7 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
 		  <li class="active">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> 系统管理<b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li class="active"><a href="./siteset.php">站点设置</a><li>
+              <li class="active"><a href="./siteset.php">全局设置</a><li>
 			  <li><a href="./passwd.php">修改密码</a></li>
             </ul>
           </li>
@@ -51,17 +51,41 @@ if(isset($_POST['submit'])) {
 	$sitename=daddslashes($_POST['sitename']);
 	$description=daddslashes($_POST['description']);
 	$keywords=daddslashes($_POST['keywords']);
+	$gonggao1=daddslashes($_POST['gonggao1']);
+	$gonggao2=daddslashes($_POST['gonggao2']);
+	$gonggao3=daddslashes($_POST['gonggao3']);
+	$guanliqq=daddslashes($_POST['guanliqq']);
 	saveconfig('sitename',$sitename);
 	saveconfig('description',$description);
 	saveconfig('keywords',$keywords);
+	saveconfig('gonggao1',$gonggao1);
+	saveconfig('gonggao2',$gonggao2);
+	saveconfig('gonggao3',$gonggao3);
+	saveconfig('guanliqq',$guanliqq);
 	showmsg('修改成功！',1);
 }else{
 ?>
       <div class="panel panel-primary">
-        <div class="panel-heading"><h3 class="panel-title">站点设置</h3></div>
+        <div class="panel-heading"><h3 class="panel-title">全局设置</h3></div>
         <div class="panel-body">
           <form action="" method="post" class="form-horizontal" role="form">
-            <div class="form-group">
+          	<div class="form-group">
+              <label class="col-sm-2 control-label">公告1</label>
+              <div class="col-sm-10"><input type="text" name="gonggao1" value="<?php echo $gonggao1; ?>" class="form-control" required/></div>
+            </div><br/>
+			<div class="form-group">
+              <label class="col-sm-2 control-label">公告2</label>
+              <div class="col-sm-10"><input type="text" name="gonggao2" value="<?php echo $gonggao2; ?>" class="form-control" required/></div>
+            </div><br/>
+			<div class="form-group">
+              <label class="col-sm-2 control-label">公告3</label>
+              <div class="col-sm-10"><input type="text" name="gonggao3" value="<?php echo $gonggao3; ?>" class="form-control" required/></div>
+            </div><br/>
+			<div class="form-group">
+              <label class="col-sm-2 control-label">管理QQ</label>
+              <div class="col-sm-10"><input type="text" name="guanliqq" value="<?php echo $guanliqq; ?>" class="form-control" required/></div>
+            </div><br/>
+			<div class="form-group">
               <label class="col-sm-2 control-label">站点名称</label>
               <div class="col-sm-10"><input type="text" name="sitename" value="<?php echo $sitename; ?>" class="form-control" required/></div>
             </div><br/>

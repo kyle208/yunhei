@@ -35,7 +35,7 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
 		  <li>
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> 系统管理<b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="./siteset.php">site设置</a><li>
+              <li><a href="./siteset.php">全局设置</a><li>
 			  <li><a href="./passwd.php">修改密码</a></li>
             </ul>
           </li>
@@ -57,12 +57,9 @@ $sum=$DB->count("SELECT count(*) from black_list WHERE 1");
             <li class="list-group-item"><span class="glyphicon glyphicon-tint"></span> <b>欢迎你：</b> 超级管理员</li>
             <li class="list-group-item"><span class="glyphicon glyphicon-list"></span> <b>功能菜单：</b> 
               <a href="./add.php" class="btn btn-xs btn-success">添加黑名单</a>
-              <a href="./passwd.php" class="btn btn-xs btn-success">修改密码</a>
-<li class="list-group-item"><span class="glyphicon glyphicon-list"></span> <b>广告：</b>
- 
-<a href="1" class="btn btn-xs btn-success">1</a>
-<a href="2" class="btn btn-xs btn-success">2</a>
-<a href="3" class="btn btn-xs btn-success">3</a>
+			  <a href="./list.php" class="btn btn-xs btn-success">黑名单修改</a>
+			  <a href="./siteset.php" class="btn btn-xs btn-success">全局设置</a>
+			  <a href="./passwd.php" class="btn btn-xs btn-success">修改密码</a>
             </li>
           </ul>
       </div>

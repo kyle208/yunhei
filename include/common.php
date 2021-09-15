@@ -26,4 +26,8 @@ include ROOT."member.php";
 $keywords=selectconfig("keywords");
 $description=selectconfig("description");
 $sitename=selectconfig("sitename");
+$gonggao1=selectconfig("gonggao1");
+$gonggao2=selectconfig("gonggao2");
+$gonggao3=selectconfig("gonggao3");
+$guanliqq=selectconfig("guanliqq");
 ?>

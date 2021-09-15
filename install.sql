@@ -51,9 +51,13 @@ CREATE TABLE IF NOT EXISTS `black_config` (
 --
 
 INSERT INTO `black_config` (`k`, `v`) VALUES
+('gonggao1', '这是公告1，请在后台修改'),
+('gonggao2', '这是公告2，请在后台修改'),
+('gonggao3', '这是公告3，请在后台修改'),
+('guanliqq', '10010'),
 ('sitename', '云黑-黑名单系统'),
-('keywords', '云黑-骗子查询系统'),
-('description', '骗子查询系统');
+('keywords', '云黑-黑名单查询系统-查询系统'),
+('description', '黑名单查询系统');
 
 -- --------------------------------------------------------
 
