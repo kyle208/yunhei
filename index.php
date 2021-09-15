@@ -59,7 +59,6 @@ $bj .= $str[mt_rand(0, strlen($str)-1)];
 <div class="container">    <div class="header">
         <ul class="nav nav-pills pull-right" role="tablist">
 		  <li role="presentation" class="active"><a href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $guanliqq; ?>" target="_blank" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-erase"></span> 举报</a></li>
-		  <li role="presentation" class="active"><a href="./siteadmin/" target="_blank" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-user"></span> 管理</a></li>
         </ul>
         <h3 class="text-muted" align="left"><font color="#8968CD"><?php echo $sitename?></font></h3>
      </div><hr>

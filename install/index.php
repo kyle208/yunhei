@@ -100,10 +100,10 @@ if ($step == 1) {
 	if (!$_POST['DB_HOST'] || !$_POST['DB_PORT'] || !$_POST['DB_NAME'] || !$_POST['DB_USER'] || !$_POST['DB_PWD']) {
 		exit('<script language=\'javascript\'>alert(\'所有项都不能为空\');history.go(-1);</script>');
 	}
-	if (!($con = mysql_connect($_POST['DB_HOST'] . ':' . $_POST['DB_PORT'], $_POST['DB_USER'], $_POST['DB_PWD']))) {
-		exit('<script language=\'javascript\'>alert("连接数据库失败，' . mysql_error() . '");history.go(-1);</script>');
-	} elseif (!mysql_select_db($_POST['DB_NAME'], $con)) {
-		exit('<script language=\'javascript\'>alert("选择的数据库不存在，' . mysql_error() . '");history.go(-1);</script>');
+	if (!($con = mysqli_connect($_POST['DB_HOST'], $_POST['DB_USER'], $_POST['DB_PWD'], $_POST['DB_NAME'], $_POST['DB_PORT']))) {
+		exit('<script language=\'javascript\'>alert("连接数据库失败，' . mysqli_error() . '");history.go(-1);</script>');
+	} elseif (!mysqli_select_db($con, $_POST['DB_NAME'])) {
+		exit('<script language=\'javascript\'>alert("选择的数据库不存在，' . mysqli_error() . '");history.go(-1);</script>');
 	}
 	$a = $_POST['DB_HOST'];
 	//
@@ -153,8 +153,8 @@ if ($step == 1) {
 			$db->exec($sql);
 		}
 	}
-	if (mysql_error()) {
-		exit('<script language=\'javascript\'>alert("导入数据表时错误，' . mysql_error() . '");history.go(-1);</script>');
+	if (mysqli_error()) {
+		exit('<script language=\'javascript\'>alert("导入数据表时错误，' . mysqli_error() . '");history.go(-1);</script>');
 	}
 	exit("<script language='javascript'>alert('执行SQL成功，共导入{$num}条数据!');window.location.href='?step=5';</script>");
 } elseif ($step == 5) {
