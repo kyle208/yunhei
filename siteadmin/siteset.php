@@ -55,6 +55,7 @@ if(isset($_POST['submit'])) {
 	$gonggao2=daddslashes($_POST['gonggao2']);
 	$gonggao3=daddslashes($_POST['gonggao3']);
 	$guanliqq=daddslashes($_POST['guanliqq']);
+	$shuoming=daddslashes($_POST['shuoming']);
 	saveconfig('sitename',$sitename);
 	saveconfig('description',$description);
 	saveconfig('keywords',$keywords);
@@ -62,6 +63,7 @@ if(isset($_POST['submit'])) {
 	saveconfig('gonggao2',$gonggao2);
 	saveconfig('gonggao3',$gonggao3);
 	saveconfig('guanliqq',$guanliqq);
+	saveconfig('shuoming',$shuoming);
 	showmsg('修改成功！',1);
 }else{
 ?>
@@ -84,6 +86,10 @@ if(isset($_POST['submit'])) {
 			<div class="form-group">
               <label class="col-sm-2 control-label">管理QQ</label>
               <div class="col-sm-10"><input type="text" name="guanliqq" value="<?php echo $guanliqq; ?>" class="form-control" required/></div>
+            </div><br/>
+			<div class="form-group">
+              <label class="col-sm-2 control-label">说明</label>
+              <div class="col-sm-10"><input type="text" name="shuoming" value="<?php echo $shuoming; ?>" class="form-control" required/></div>
             </div><br/>
 			<div class="form-group">
               <label class="col-sm-2 control-label">站点名称</label>

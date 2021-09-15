@@ -69,7 +69,7 @@ $bj .= $str[mt_rand(0, strlen($str)-1)];
 		<li class="list-group-item"><?php echo $gonggao1; ?></li>
 		<li class="list-group-item"><?php echo $gonggao2; ?></li>
 <li class="list-group-item"><?php echo $gonggao3; ?></li>
-</p><p></p><b><a class="btn btn-block btn-danger" data-toggle="collapse" data-parent="#accordion2" href="#faq1" aria-expanded="false">关于骗子举报成功秘籍</a></b><div id="faq1" class="accordion-body collapse" style="height: 0px;" aria-expanded="false"><h5>举报请把有效资料整理好，可以通过快速QQ联系我，或者通过电子邮件方式联系。晚上通常我是0点才睡，所以举报申请，我都会及时处理的<p></p></h5></div><p></p>
+</p><p></p><b><a class="btn btn-block btn-danger" data-toggle="collapse" data-parent="#accordion2" href="#faq1" aria-expanded="false">说明</a></b><div id="faq1" class="accordion-body collapse" style="height: 0px;" aria-expanded="false"><h5><?php echo $shuoming;?><p></p></h5></div><p></p>
 </marquee></a>
 <p class="bg-primary" style="background-color:#FF9900;padding: 3px;"><img border="0" width="32" src="./images/1.gif" />如果是被他人恶意举报，QQ被恶意收录，请联系解除</p
 <ul class="list-group">

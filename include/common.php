@@ -3,7 +3,7 @@
 error_reporting(0);
 define('IN_CRONLITE', true);
 define('ROOT', dirname(__FILE__).'/');
-define('SYS_KEY', 'blackqq348069510');
+define('SYS_KEY', 'blackqq10010');
 
 date_default_timezone_set("PRC");
 $date = date("Y-m-d H:i:s");
@@ -30,4 +30,5 @@ $gonggao1=selectconfig("gonggao1");
 $gonggao2=selectconfig("gonggao2");
 $gonggao3=selectconfig("gonggao3");
 $guanliqq=selectconfig("guanliqq");
+$shuoming=selectconfig("shuoming");
 ?>

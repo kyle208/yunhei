@@ -55,7 +55,8 @@ INSERT INTO `black_config` (`k`, `v`) VALUES
 ('gonggao2', '这是公告2，请在后台修改'),
 ('gonggao3', '这是公告3，请在后台修改'),
 ('guanliqq', '10010'),
-('sitename', '云黑-黑名单系统'),
+('shuoming', '这里是你想要的说明，自行更改！'),
+('sitename', 'kyle云黑-黑名单系统'),
 ('keywords', '云黑-黑名单查询系统-查询系统'),
 ('description', '黑名单查询系统');
 
