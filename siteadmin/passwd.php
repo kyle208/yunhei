@@ -21,6 +21,9 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
       </div><!-- /.navbar-header -->
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
+		<li>
+            <a href="../" target="view_window"><span class="glyphicon glyphicon-user"></span> 云黑首页</a>
+          </li>
           <li>
             <a href="./"><span class="glyphicon glyphicon-user"></span> 后台首页</a>
           </li>

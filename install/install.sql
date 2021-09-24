@@ -72,6 +72,7 @@ CREATE TABLE IF NOT EXISTS `black_list` (
   `level` int(1) NOT NULL,
   `date` datetime NOT NULL,
   `note` text COMMENT '拉黑原因',
+  `czz` text COMMENT '操作者',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 

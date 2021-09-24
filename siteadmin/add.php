@@ -1,10 +1,10 @@
 <?php
 /**
- * 添加黑名单
+ * 添加云黑
 **/
 $mod='blank';
 include("../include/common.php");
-$title='添加黑名单';
+$title='添加云黑';
 include './head.php';
 if($islogin==1){}else exit("<script language='javascript'>window.location.href='./login.php';</script>");
 ?>
@@ -17,19 +17,22 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="./">黑名单查询系统后台</a>
+        <a class="navbar-brand" href="./">云黑查询系统后台</a>
       </div><!-- /.navbar-header -->
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
+		  <li>
+            <a href="../" target="view_window"><span class="glyphicon glyphicon-user"></span> 云黑首页</a>
+          </li>
           <li>
             <a href="./"><span class="glyphicon glyphicon-user"></span> 后台首页</a>
           </li>
           <li class="active">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-pushpin"></span> 黑名单管理<b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-pushpin"></span> 云黑管理<b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li class="active"><a href="./add.php">添加黑名单</a><li>
-			  <li><a href="./list.php">黑名单列表</a></li>
-			  <li><a href="./search.php">搜索黑名单</a><li>
+              <li class="active"><a href="./add.php">添加云黑</a><li>
+			  <li><a href="./list.php">云黑列表</a></li>
+			  <li><a href="./search.php">搜索云黑</a><li>
             </ul>
           </li>
 		  <li>
@@ -51,14 +54,15 @@ if(isset($_POST['qq']) && isset($_POST['note'])){
 $qq=daddslashes($_POST['qq']);
 $level=daddslashes($_POST['level']);
 $note=daddslashes($_POST['note']);
+$czz=daddslashes($_POST['czz']);
 $row=$DB->get_row("SELECT * FROM black_list WHERE qq='{$qq}' limit 1");
-if($row!='')exit("<script language='javascript'>alert('后台已存在该黑名单用户！');history.go(-1);</script>");
-	$sql="insert into `black_list` (`qq`,`date`,`level`,`note`) values ('".$qq."','".$date."','".$level."','".$note."')";
+if($row!='')exit("<script language='javascript'>alert('后台已存在该云黑用户！');history.go(-1);</script>");
+	$sql="insert into `black_list` (`qq`,`date`,`level`,`note`,`czz`) values ('".$qq."','".$date."','".$level."','".$note."','".$czz."')";
 	$DB->query($sql);
 exit("<script language='javascript'>alert('添加成功');window.location.href='list.php';</script>");
 } ?>
       <div class="panel panel-primary">
-        <div class="panel-heading"><h3 class="panel-title">添加黑名单</h3></div>
+        <div class="panel-heading"><h3 class="panel-title">添加云黑</h3></div>
         <div class="panel-body">
           <form action="./add.php" method="post" class="form-horizontal" role="form">
             <div class="input-group">
@@ -66,7 +70,7 @@ exit("<script language='javascript'>alert('添加成功');window.location.href='
               <input type="text" name="qq" value="<?=@$_POST['qq']?>" class="form-control" placeholder="348069510" autocomplete="off" required/>
             </div><br/>
 			<div class="input-group">
-			<span class="input-group-addon">黑名单等级</span>
+			<span class="input-group-addon">云黑等级</span>
 			<select name="level" class="form-control">
 			<option value="1">1级-低</option>
 			<option value="2">2级-中</option>
@@ -76,13 +80,17 @@ exit("<script language='javascript'>alert('添加成功');window.location.href='
               <span class="input-group-addon">拉黑原因</span>
               <input type="text" name="note" value="<?=@$_POST['note']?>" class="form-control" placeholder="无" autocomplete="off" required/>
             </div><br/>
+			<div class="input-group">
+              <span class="input-group-addon">操作者</span>
+              <input type="text" name="czz" value="<?=@$_POST['czz']?>" class="form-control" placeholder="无" autocomplete="off" required/>
+            </div><br/>
             <div class="form-group">
               <div class="col-sm-12"><input type="submit" value="添加" class="btn btn-primary form-control"/></div>
             </div>
           </form>
         </div>
         <div class="panel-footer">
-          <span class="glyphicon glyphicon-info-sign"></span> 加入黑名单!
+          <span class="glyphicon glyphicon-info-sign"></span> 加入云黑!
         </div>
       </div>
     </div>

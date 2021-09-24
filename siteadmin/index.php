@@ -1,10 +1,10 @@
 <?php
 /**
- * 黑名单查询系统后台
+ * 云黑查询系统后台
 **/
 $mod='blank';
 include("../include/common.php");
-$title='黑名单查询系统后台';
+$title='云黑查询系统后台';
 include './head.php';
 if($islogin==1){}else exit("<script language='javascript'>window.location.href='./login.php';</script>");
 ?>
@@ -17,19 +17,22 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="./">黑名单查询系统后台</a>
+        <a class="navbar-brand" href="./">云黑查询系统后台</a>
       </div><!-- /.navbar-header -->
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
+		<li>
+            <a href="../" target="view_window"><span class="glyphicon glyphicon-user"></span> 云黑首页</a>
+          </li>
           <li class="active">
             <a href="./"><span class="glyphicon glyphicon-user"></span> 后台首页</a>
           </li>
           <li>
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-pushpin"></span> 黑名单管理<b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-pushpin"></span> 云黑管理<b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="./add.php">添加黑名单</a><li>
-			  <li><a href="./list.php">黑名单列表</a></li>
-			  <li><a href="./search.php">搜索黑名单</a><li>
+              <li><a href="./add.php">添加云黑</a><li>
+			  <li><a href="./list.php">云黑列表</a></li>
+			  <li><a href="./search.php">搜索云黑</a><li>
             </ul>
           </li>
 		  <li>
@@ -52,12 +55,12 @@ $sum=$DB->count("SELECT count(*) from black_list WHERE 1");
       <div class="panel panel-primary">
         <div class="panel-heading"><h3 class="panel-title">后台首页</h3></div>
           <ul class="list-group">
-            <li class="list-group-item"><span class="glyphicon glyphicon-stats"></span> <b>后台统计：</b> 共:<?=$sum?>个黑名单用户</li>
+            <li class="list-group-item"><span class="glyphicon glyphicon-stats"></span> <b>后台统计：</b> 共:<?=$sum?>个云黑用户</li>
             <li class="list-group-item"><span class="glyphicon glyphicon-time"></span> <b>现在时间：</b> <?=$date?></li>
             <li class="list-group-item"><span class="glyphicon glyphicon-tint"></span> <b>欢迎你：</b> 超级管理员</li>
             <li class="list-group-item"><span class="glyphicon glyphicon-list"></span> <b>功能菜单：</b> 
-              <a href="./add.php" class="btn btn-xs btn-success">添加黑名单</a>
-			  <a href="./list.php" class="btn btn-xs btn-success">黑名单修改</a>
+              <a href="./add.php" class="btn btn-xs btn-success">添加云黑</a>
+			  <a href="./list.php" class="btn btn-xs btn-success">云黑修改</a>
 			  <a href="./siteset.php" class="btn btn-xs btn-success">全局设置</a>
 			  <a href="./passwd.php" class="btn btn-xs btn-success">修改密码</a>
             </li>

@@ -88,17 +88,19 @@ if($qq=$_POST['qq']) {
 	echo '<label>查询QQ：'.$qq.'</label><br>';
 	if($row) {
 		echo '
-		<label>黑名单等级：</label>
+		<label>云黑等级：</label>
 		<font color="blue">'.$row['level'].'级</font><br>
-		<label>黑名单时间：</label>
+		<label>云黑时间：</label>
 		<font color="blue">'.$row['date'].'</font><br>
-		<label>黑名单原因：</label>
+		<label>云黑原因：</label>
 		<font color="blue">'.$row['note'].'</font><br>
+		<label>操作者：</label>
+		<font color="blue">'.$row['czz'].'</font><br>
 	    <label><font color="red">请停止任何交易！或点举报联系解除</font></label>';
 ?>
 <?php
 	}else{
-		echo '<label><font color="green">该QQ尚未被录入！但是我们不能保证交易绝对安全</font></label>';
+		echo '<label><font color="green">该QQ尚未被录入！</font></label>';
 	}
 }
 $DB->close();

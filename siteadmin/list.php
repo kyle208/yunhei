@@ -1,10 +1,10 @@
 <?php
 /**
- * 黑名单列表
+ * 云黑列表
 **/
 $mod='blank';
 include("../include/common.php");
-$title='黑名单列表';
+$title='云黑列表';
 include './head.php';
 if($islogin==1){}else exit("<script language='javascript'>window.location.href='./login.php';</script>");
 ?>
@@ -17,19 +17,22 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="./">黑名单查询系统后台</a>
+        <a class="navbar-brand" href="./">云黑查询系统后台</a>
       </div><!-- /.navbar-header -->
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
+		<li>
+            <a href="../" target="view_window"><span class="glyphicon glyphicon-user"></span> 云黑首页</a>
+          </li>
           <li>
             <a href="./"><span class="glyphicon glyphicon-user"></span> 后台首页</a>
           </li>
           <li class="active">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-pushpin"></span> 黑名单管理<b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-pushpin"></span> 云黑管理<b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="./add.php">添加黑名单</a><li>
-			  <li class="active"><a href="./list.php">黑名单列表</a></li>
-			  <li><a href="./search.php">搜索黑名单</a><li>
+              <li><a href="./add.php">添加云黑</a><li>
+			  <li class="active"><a href="./list.php">云黑列表</a></li>
+			  <li><a href="./search.php">搜索云黑</a><li>
             </ul>
           </li>
 		  <li>
@@ -50,11 +53,11 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
 if(isset($_GET['qq'])) {
 	$sql=($_GET['method']==1)?" `qq` LIKE '%{$_GET['qq']}%'":" `qq`='{$_GET['qq']}'";
 	$gls=$DB->count("SELECT count(*) from black_list WHERE{$sql}");
-	$con='QQ '.$_GET['qq'].' 共有 <b>'.$gls.'</b> 个黑名单用户';
+	$con='QQ '.$_GET['qq'].' 共有 <b>'.$gls.'</b> 个云黑用户';
 }else{
 	$gls=$DB->count("SELECT count(*) from black_list WHERE 1");
 	$sql=" 1";
-	$con='黑名单后台共有 <b>'.$gls.'</b> 个黑名单用户';
+	$con='云黑后台共有 <b>'.$gls.'</b> 个云黑用户';
 }
 
 $pagesize=30;
@@ -70,13 +73,13 @@ echo $con;
 ?>
       <div class="table-responsive">
         <table class="table table-striped">
-          <thead><tr><th>ID</th><th>ＱＱ</th><th>添加时间</th><th>黑名单等级</th><th>操作</th></tr></thead>
+          <thead><tr><th>ID</th><th>ＱＱ</th><th>添加时间</th><th>云黑等级</th><th>操作者</th><th>设置</th></tr></thead>
           <tbody>
 <?php
 $rs=$DB->query("SELECT * FROM black_list WHERE{$sql} order by id desc limit $pageu,$pagesize");
 while($res = $DB->fetch($rs))
 {
-echo '<tr><td>'.$res['id'].'</td><td>'.$res['qq'].'</td><td>'.$res['date'].'</td><td>'.$res['level'].'级</td><td><a href="./edit.php?my=update&id='.$res['id'].'" class="btn btn-xs btn-info">修改</a> <a href="./edit.php?my=del&id='.$res['id'].'" class="btn btn-xs btn-danger" onclick="return confirm(\'你确实要解除这个黑名单用户吗？\');">删除</a></td></tr>';
+echo '<tr><td>'.$res['id'].'</td><td>'.$res['qq'].'</td><td>'.$res['date'].'</td><td>'.$res['level'].'级</td><td>'.$res['czz'].'</td><<td><a href="./edit.php?my=update&id='.$res['id'].'" class="btn btn-xs btn-info">修改</a> <a href="./edit.php?my=del&id='.$res['id'].'" class="btn btn-xs btn-danger" onclick="return confirm(\'你确实要解除这个云黑用户吗？\');">删除</a></td></tr>';
 }
 ?>
           </tbody>

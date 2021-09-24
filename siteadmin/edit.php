@@ -17,19 +17,22 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="./">黑名单查询系统后台</a>
+        <a class="navbar-brand" href="./">云黑查询系统后台</a>
       </div><!-- /.navbar-header -->
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
+		<li>
+            <a href="../" target="view_window"><span class="glyphicon glyphicon-user"></span> 云黑首页</a>
+          </li>
           <li>
             <a href="./"><span class="glyphicon glyphicon-user"></span> 后台首页</a>
           </li>
           <li class="active">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-pushpin"></span> 黑名单管理<b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-pushpin"></span> 云黑管理<b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="./add.php">添加黑名单</a><li>
-			  <li><a href="./list.php">黑名单列表</a></li>
-			  <li><a href="./search.php">搜索黑名单</a><li>
+              <li><a href="./add.php">添加云黑</a><li>
+			  <li><a href="./list.php">云黑列表</a></li>
+			  <li><a href="./search.php">搜索云黑</a><li>
             </ul>
           </li>
 		  <li>
@@ -50,12 +53,13 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
 if($_GET['my']=='update') {
 $id=intval($_GET['id']);
 $row=$DB->get_row("SELECT * FROM black_list WHERE id='{$id}' limit 1");
-if($row=='')exit("<script language='javascript'>alert('后台不存在该黑名单用户！');history.go(-1);</script>");
+if($row=='')exit("<script language='javascript'>alert('后台不存在该云黑用户！');history.go(-1);</script>");
 if(isset($_POST['submit'])) {
 	$qq=daddslashes($_POST['qq']);
 	$level=daddslashes($_POST['level']);
 	$note=daddslashes($_POST['note']);
-		$sql="update `black_list` set `qq` ='{$qq}',`level` ='{$level}',`note` ='{$note}' where `id`='{$id}'";
+	$czz=daddslashes($_POST['czz']);
+		$sql="update `black_list` set `qq` ='{$qq}',`level` ='{$level}',`note` ='{$note}',`czz` ='{$czz}'  where `id`='{$id}'";
 	if($DB->query($sql)){
 		showmsg('修改成功！',1,$_POST['backurl']);
 	}
@@ -72,7 +76,7 @@ if(isset($_POST['submit'])) {
               <div class="col-sm-10"><input type="text" name="qq" value="<?php echo $row['qq']; ?>" class="form-control" required/></div>
             </div><br/>
 			<div class="form-group">
-              <label class="col-sm-2 control-label">黑名单等级</label>
+              <label class="col-sm-2 control-label">云黑等级</label>
               <div class="col-sm-10"><select name="level" class="form-control">
 				<?php if($row['level']==1){?>
                 <option value="1">1级-低</option>
@@ -93,9 +97,13 @@ if(isset($_POST['submit'])) {
               <label class="col-sm-2 control-label">拉黑原因</label>
               <div class="col-sm-10"><input type="text" name="note" value="<?php echo $row['note']; ?>" class="form-control"/></div>
             </div><br/>
+			<div class="form-group">
+              <label class="col-sm-2 control-label">操作者</label>
+              <div class="col-sm-10"><input type="text" name="czz" value="<?php echo $row['czz']; ?>" class="form-control"/></div>
+            </div><br/>
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10"><input type="submit" name="submit" value="修改" class="btn btn-primary form-control"/><br/>
-			  <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">返回黑名单列表</a></div>
+			  <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">返回云黑列表</a></div>
             </div>
           </form>
         </div>

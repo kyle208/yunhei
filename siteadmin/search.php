@@ -17,19 +17,22 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="./">黑名单查询系统后台</a>
+        <a class="navbar-brand" href="./">云黑查询系统后台</a>
       </div><!-- /.navbar-header -->
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
+		<li>
+            <a href="../" target="view_window"><span class="glyphicon glyphicon-user"></span> 云黑首页</a>
+          </li>
           <li>
             <a href="./"><span class="glyphicon glyphicon-user"></span> 后台首页</a>
           </li>
           <li class="active">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-pushpin"></span> 黑名单管理<b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-pushpin"></span> 云黑管理<b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="./add.php">添加黑名单</a><li>
-			  <li><a href="./list.php">黑名单列表</a></li>
-			  <li class="active"><a href="./search.php">搜索黑名单</a><li>
+              <li><a href="./add.php">添加云黑</a><li>
+			  <li><a href="./list.php">云黑列表</a></li>
+			  <li class="active"><a href="./search.php">搜索云黑</a><li>
             </ul>
           </li>
 		  <li>
