@@ -1,4 +1,11 @@
 <?php
+error_reporting(E_ALL & ~E_NOTICE);
+if(!file_exists('install/install.lock')){
+$cc =  "http://".$_SERVER ['HTTP_HOST']."/install";
+Header("Location:$cc");
+	}
+?>
+<?php
 include("./include/common.php");
 ?>
 <!DOCTYPE html>
