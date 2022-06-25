@@ -66,7 +66,7 @@ exit("<script language='javascript'>alert('添加成功');window.location.href='
         <div class="panel-body">
           <form action="./add.php" method="post" class="form-horizontal" role="form">
             <div class="input-group">
-              <span class="input-group-addon">ＱＱ</span>
+              <span class="input-group-addon">QQ号/微信ID</span>
               <input type="text" name="qq" value="<?=@$_POST['qq']?>" class="form-control" placeholder="348069510" autocomplete="off" required/>
             </div><br/>
 			<div class="input-group">

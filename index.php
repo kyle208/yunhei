@@ -77,22 +77,22 @@ $bj .= $str[mt_rand(0, strlen($str)-1)];
 <li class="list-group-item"><?php echo $gonggao3; ?></li>
 </p><p></p><b><a class="btn btn-block btn-danger" data-toggle="collapse" data-parent="#accordion2" href="#faq1" aria-expanded="false">说明</a></b><div id="faq1" class="accordion-body collapse" style="height: 0px;" aria-expanded="false"><h5><?php echo $shuoming;?><p></p></h5></div><p></p>
 </marquee></a>
-<p class="bg-primary" style="background-color:#FF9900;padding: 3px;"><img border="0" width="32" src="./images/1.gif" />如果是被他人恶意举报，QQ被恶意收录，请联系解除</p
+<p class="bg-primary" style="background-color:#FF9900;padding: 3px;"><img border="0" width="32" src="./images/1.gif" />如果是被他人恶意举报，QQ号/微信ID被恶意收录，请联系解除</p
 <ul class="list-group">
 	
   <li class="list-group-item"><span class="glyphicon glyphicon-time"></span> <b>现在时间：</b><div id="timeShow" class="time1"></div></li>
 		</ul>
       </div>
-	 <h3 class="form-signin-heading">输入QQ查询</h3>
+	 <h3 class="form-signin-heading">输入QQ号/微信ID查询</h3>
 	 <form action="" class="form-sign" method="post">
-	 <input type="text" class="form-control" name="qq" placeholder="请输入查询QQ" value=""><br>
+	 <input type="text" class="form-control" name="qq" placeholder="请输入查询QQ号/微信ID" value=""><br>
 	 <input type="submit" class="btn btn-primary btn-block" value="点击查询"><br/>
 	 <p style="text-align:left">
 <?php
 if($qq=$_POST['qq']) {
 	$qq=$_POST['qq'];
 	$row=$DB->get_row("SELECT * FROM black_list WHERE qq='$qq' limit 1");
-	echo '<label>查询QQ：'.$qq.'</label><br>';
+	echo '<label>查询ID：'.$qq.'</label><br>';
 	if($row) {
 		echo '
 		<label>云黑等级：</label>
@@ -107,7 +107,7 @@ if($qq=$_POST['qq']) {
 ?>
 <?php
 	}else{
-		echo '<label><font color="green">该QQ尚未被录入！</font></label>';
+		echo '<label><font color="green">该ID尚未被录入！</font></label>';
 	}
 }
 $DB->close();

@@ -56,7 +56,7 @@ if($islogin==1){}else exit("<script language='javascript'>window.location.href='
             <div class="form-group">
               <label>类别</label>
               <select class="form-control">
-                <option value="1">ＱＱ</option>
+                <option value="1">QQ号/微信ID</option>
               </select>
             </div>
             <div class="form-group">

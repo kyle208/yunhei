@@ -72,7 +72,7 @@ if(isset($_POST['submit'])) {
           <form action="./edit.php?my=update&id=<?php echo $id; ?>" method="post" class="form-horizontal" role="form">
 		  <input type="hidden" name="backurl" value="<?php echo $_SERVER['HTTP_REFERER']; ?>"/>
 			<div class="form-group">
-              <label class="col-sm-2 control-label">ＱＱ</label>
+              <label class="col-sm-2 control-label">QQ号/微信ID</label>
               <div class="col-sm-10"><input type="text" name="qq" value="<?php echo $row['qq']; ?>" class="form-control" required/></div>
             </div><br/>
 			<div class="form-group">

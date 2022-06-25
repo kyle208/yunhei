@@ -73,7 +73,7 @@ echo $con;
 ?>
       <div class="table-responsive">
         <table class="table table-striped">
-          <thead><tr><th>ID</th><th>ＱＱ</th><th>添加时间</th><th>云黑等级</th><th>操作者</th><th>设置</th></tr></thead>
+          <thead><tr><th>ID</th><th>QQ号/微信ID</th><th>添加时间</th><th>云黑等级</th><th>操作者</th><th>设置</th></tr></thead>
           <tbody>
 <?php
 $rs=$DB->query("SELECT * FROM black_list WHERE{$sql} order by id desc limit $pageu,$pagesize");
