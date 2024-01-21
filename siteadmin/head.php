@@ -6,9 +6,12 @@
   <title><?=$title?></title>
   <meta name="keywords" content="<?php echo $keywords?>"/>
   <meta name="description" content="<?php echo $description?>"/>
-  <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../cj/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="../cj/js/jquery.min.js"></script>
+  <script src="../cj/js/bootstrap.min.js"></script>
+  <!--<link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
   <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-  <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
   <!--[if lt IE 9]>
     <script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
     <script src="http://libs.useso.com/js/respond.js/1.4.2/respond.min.js"></script>
