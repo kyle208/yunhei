@@ -79,7 +79,7 @@ echo $con;
 $rs=$DB->query("SELECT * FROM black_list WHERE{$sql} order by id desc limit $pageu,$pagesize");
 while($res = $DB->fetch($rs))
 {
-echo '<tr><td>'.$res['id'].'</td><td>'.$res['qq'].'</td><td>'.$res['date'].'</td><td>'.$res['level'].'级</td><td>'.$res['czz'].'</td><<td><a href="./edit.php?my=update&id='.$res['id'].'" class="btn btn-xs btn-info">修改</a> <a href="./edit.php?my=del&id='.$res['id'].'" class="btn btn-xs btn-danger" onclick="return confirm(\'你确实要解除这个云黑用户吗？\');">删除</a></td></tr>';
+echo '<tr><td>'.$res['id'].'</td><td>'.$res['qq'].'</td><td>'.$res['date'].'</td><td>'.$res['level'].'级</td><td>'.$res['czz'].'</td><td><a href="./edit.php?my=update&id='.$res['id'].'" class="btn btn-xs btn-info">修改</a> <a href="./edit.php?my=del&id='.$res['id'].'" class="btn btn-xs btn-danger" onclick="return confirm(\'你确实要解除这个云黑用户吗？\');">删除</a></td></tr>';
 }
 ?>
           </tbody>
