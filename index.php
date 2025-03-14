@@ -20,9 +20,9 @@ include("./include/common.php");
     <title><?php echo $sitename;?></title>
 	<meta name="keywords" content="<?php echo $keywords;?>"/>
 	<meta name="description" content="<?php echo $description;?>"/>
-    <link href="./assets/css/bootstrap.min.css" rel="stylesheet"/>
-	<script src="./assets/js/jquery.min.js"></script>
-	<script src="./assets/js/bootstrap.min.js"></script>
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/bootstrap.min.js"></script>
 	<style>
 
 	body{
@@ -59,10 +59,7 @@ include("./include/common.php");
   </script>
 </head>
 <?php
-$str = "123456789abcd";
-$bj .= $str[mt_rand(0, strlen($str)-1)];
 ?>
-<body background="./images/bj/bj-<?php echo $bj;?>.jpg">
 <div class="container">    <div class="header">
         <ul class="nav nav-pills pull-right" role="tablist">
 		  <li role="presentation" class="active"><a href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $guanliqq; ?>" target="_blank" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-erase"></span> 举报</a></li>
