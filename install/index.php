@@ -16,8 +16,8 @@ $step = is_numeric($_GET['step']) ? $_GET['step'] : '1';
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="./assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="./assets/css/css/font-awesome.min.css" rel="stylesheet"/>
 </head>
 <body>
 <nav class="navbar navbar-default" role="navigation">

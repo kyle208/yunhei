@@ -20,9 +20,9 @@ include("./include/common.php");
     <title><?php echo $sitename;?></title>
 	<meta name="keywords" content="<?php echo $keywords;?>"/>
 	<meta name="description" content="<?php echo $description;?>"/>
-    <link href="../cj/css/bootstrap.min.css" rel="stylesheet"/>
-	<script src="../cj/js/jquery.min.js"></script>
-	<script src="../cj/js/bootstrap.min.js"></script>
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet"/>
+	<script src="./assets/js/jquery.min.js"></script>
+	<script src="./assets/js/bootstrap.min.js"></script>
 	<style>
 
 	body{
